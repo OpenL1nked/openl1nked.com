@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenL1nked — Unifying your digital life, open-source</title>
+  <meta name="description" content="OpenL1nked is an open-source, cross-platform bridge between your desktop and mobile devices — device mirroring, notification sync, file transfer, shared clipboard and messaging, built on open standards." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenL1nked — Unifying your digital life, open-source" />
+  <meta property="og:description" content="A free and open-source bridge between your desktop and mobile devices. Built on open standards for privacy, performance, and control." />
+  <meta property="og:url" content="https://openl1nked.com/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2360a5fa'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='%230f172a'/%3E%3Cpath fill='none' stroke='url(%23g)' stroke-width='2.2' stroke-linecap='round' d='M9 15l6-6M8.5 12.5l-1.8 1.8a2.6 2.6 0 1 0 3.7 3.7l1.8-1.8M15.5 11.5l1.8-1.8a2.6 2.6 0 1 0-3.7-3.7l-1.8 1.8'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-decor" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 15l6-6M8.5 12.5l-1.8 1.8a2.6 2.6 0 1 0 3.7 3.7l1.8-1.8M15.5 11.5l1.8-1.8a2.6 2.6 0 1 0-3.7-3.7l-1.8 1.8"/></svg>
+        </span>
+        <span class="brand-name">OpenL1nked</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="#features">Features</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#projects">Projects</a>
+        <a href="#contribute">Contribute</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="https://github.com/OpenL1nked" target="_blank" rel="noopener">GitHub</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> Concept &amp; planning phase &mdash; call for founding contributors</p>
+        <h1>Unifying your digital life, <span class="grad-text">open-source.</span></h1>
+        <p class="lead">
+          OpenL1nked is a community-built, cross-platform bridge between your desktop and mobile
+          devices &mdash; app mirroring, notification sync, file transfer, shared clipboard and messaging,
+          without the walled gardens. No telemetry, no lock-in, no subscription.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/OpenL1nked/openl1nked-Windows" target="_blank" rel="noopener">
+            Explore the Desktop App
+          </a>
+          <a class="btn btn-secondary" href="#contribute">Get Involved</a>
+        </div>
+        <p class="hero-note">Built on the open KDE&nbsp;Connect protocol &middot; MIT licensed &middot; 100% volunteer-driven</p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mock-window glass-panel">
+          <div class="mock-sidebar">
+            <div class="mock-brand">
+              <span class="mock-logo"></span>
+              <span>OpenL1nked</span>
+            </div>
+            <div class="mock-nav">
+              <span class="mock-nav-item active">Devices</span>
+              <span class="mock-nav-item">Messages</span>
+              <span class="mock-nav-item">Files</span>
+              <span class="mock-nav-item">Settings</span>
+            </div>
+          </div>
+          <div class="mock-content">
+            <div class="mock-topbar">
+              <span>Nearby Devices</span>
+              <span class="mock-status"><span class="pulse pulse-sm"></span>Scanning</span>
+            </div>
+            <div class="mock-card">
+              <div class="mock-device-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <div class="mock-device-info">
+                <strong>Pixel 8</strong>
+                <span>PHONE &middot; Port 1716</span>
+              </div>
+              <span class="mock-btn">Pair</span>
+            </div>
+            <div class="mock-card mock-card-connected">
+              <div class="mock-device-icon connected">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div class="mock-device-info">
+                <strong>Study Desktop</strong>
+                <span>DESKTOP &middot; Port 1716</span>
+              </div>
+              <span class="mock-connected"><span class="pulse pulse-sm"></span>Connected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section container">
+      <h2 class="section-title">Why OpenL1nked?</h2>
+      <p class="section-lead">Everything you love about proprietary phone-desktop bridges &mdash; open, transparent, and yours to control.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="9" y="18" width="6" height="2"/></svg>
+          </div>
+          <h3>Truly Cross-Platform</h3>
+          <p>Desktop clients for Windows, macOS and Linux; mobile for Android, with limited iOS support planned.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z"/></svg>
+          </div>
+          <h3>Privacy-First</h3>
+          <p>End-to-end encryption for every communication channel &mdash; your data stays between your own devices.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <h3>Feature-Rich</h3>
+          <p>App mirroring, notification sync, file transfer, shared clipboard, full messaging and desktop control.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a7 7 0 0 1 14 0M2 12.5h20M12 12.5v8"/></svg>
+          </div>
+          <h3>Mobile Data Ready</h3>
+          <p>Stay linked over the internet, not just Wi-Fi, via a self-hostable relay server &mdash; still end-to-end encrypted.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
+          </div>
+          <h3>Modern Tech</h3>
+          <p>Rust &amp; Tauri power a lightweight, fast and secure desktop experience with a small footprint.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8V6a5 5 0 0 0-10 0v2M5 8h14l-1 12H6L5 8z"/></svg>
+          </div>
+          <h3>Open, By You, For You</h3>
+          <p>Transparent, community-driven development &mdash; MIT licensed, no ads, no telemetry, no vendor lock-in.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tech stack -->
+    <section id="stack" class="section container">
+      <h2 class="section-title">Proposed Technology Stack</h2>
+      <p class="section-lead">The modern, open stack the project is being designed around.</p>
+
+      <div class="stack-grid">
+        <div class="stack-item glass-panel">
+          <span class="stack-tag">Desktop App</span>
+          <strong>Tauri</strong>
+          <p>Rust backend, web frontend &mdash; a fast, lightweight, secure shell.</p>
+        </div>
+        <div class="stack-item glass-panel">
+          <span class="stack-tag">Mobile (Android)</span>
+          <strong>Kotlin</strong>
+          <p>Heavily inspired by &amp; leveraging KDE Connect's architecture.</p>
+        </div>
+        <div class="stack-item glass-panel">
+          <span class="stack-tag">Protocol</span>
+          <strong>KDE Connect Protocol</strong>
+          <p>End-to-end encrypted, robust and already proven across platforms.</p>
+        </div>
+        <div class="stack-item glass-panel">
+          <span class="stack-tag">Remote Connectivity</span>
+          <strong>WebSocket Relay</strong>
+          <p>Custom Rust/Node.js relay server for when devices aren't on the same LAN.</p>
+        </div>
+        <div class="stack-item glass-panel">
+          <span class="stack-tag">App Mirroring</span>
+          <strong>scrcpy-inspired</strong>
+          <p>High-performance screen streaming, wrapped for a native desktop feel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section container">
+      <h2 class="section-title">Planned Roadmap</h2>
+      <p class="section-lead">A pre-development project &mdash; every phase is a goal we're building toward together.</p>
+
+      <div class="roadmap">
+        <div class="roadmap-phase glass-panel">
+          <div class="roadmap-head">
+            <span class="roadmap-num">Phase 1</span>
+            <h3>Foundation &amp; LAN Connectivity</h3>
+          </div>
+          <p class="roadmap-sub">The bedrock of OpenL1nked: secure, local device communication.</p>
+          <ul>
+            <li>Tauri desktop project structure</li>
+            <li>KDE Connect device discovery over UDP (Rust)</li>
+            <li>Pairing &amp; TLS encryption</li>
+            <li>Desktop UI for devices, pairing &amp; status</li>
+            <li>Foundational Android app</li>
+            <li>Reliable LAN connection, desktop &harr; mobile</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-phase glass-panel">
+          <div class="roadmap-head">
+            <span class="roadmap-num">Phase 2</span>
+            <h3>Remote Connectivity via Relay</h3>
+          </div>
+          <p class="roadmap-sub">Connecting your devices, no matter where they are.</p>
+          <ul>
+            <li>Secure, privacy-focused WebSocket relay server</li>
+            <li>Automatic LAN &rarr; relay fallback</li>
+            <li>Custom relay server settings</li>
+            <li>End-to-end encrypted relay traffic</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-phase glass-panel">
+          <div class="roadmap-head">
+            <span class="roadmap-num">Phase 3</span>
+            <h3>Core Features &amp; Messaging</h3>
+          </div>
+          <p class="roadmap-sub">Essential functionality and a seamless messaging experience.</p>
+          <ul>
+            <li>Notification sync with reply/dismiss</li>
+            <li>Bidirectional shared clipboard</li>
+            <li>Robust file transfer UI</li>
+            <li>SMS/MMS conversation history &amp; sending</li>
+            <li>RCS messaging via Google Messages for Web</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-phase glass-panel">
+          <div class="roadmap-head">
+            <span class="roadmap-num">Phase 4</span>
+            <h3>High-Bandwidth &amp; Polish</h3>
+          </div>
+          <p class="roadmap-sub">The differentiating features that make OpenL1nked truly powerful.</p>
+          <ul>
+            <li>High-performance app mirroring (Android)</li>
+            <li>Desktop controls (lock, shutdown, etc.)</li>
+            <li>Full macOS &amp; Linux clients</li>
+            <li>Limited iOS client</li>
+            <li>Documentation &amp; CI/CD pipelines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container">
+      <h2 class="section-title">The Project, In Pieces</h2>
+      <p class="section-lead">Every repository under the OpenL1nked organization is open. Here's what's underway.</p>
+
+      <div class="project-grid">
+        <a class="project-card glass-panel" href="https://github.com/OpenL1nked/openl1nked-Windows" target="_blank" rel="noopener">
+          <div class="project-head">
+            <h3>openl1nked-Windows</h3>
+            <span class="project-badge">Tauri + Rust</span>
+          </div>
+          <p>The desktop client. Discovers nearby devices, handles KDE Connect pairing and TLS, and renders a glassmorphic devices dashboard.</p>
+          <span class="project-link">View repository &rarr;</span>
+        </a>
+
+        <a class="project-card glass-panel" href="https://github.com/OpenL1nked/scrcpy-wrapper" target="_blank" rel="noopener">
+          <div class="project-head">
+            <h3>scrcpy-wrapper</h3>
+            <span class="project-badge">Mirroring</span>
+          </div>
+          <p>A desktop wrapper around scrcpy that will power high-performance Android screen mirroring and remote control.</p>
+          <span class="project-link">View repository &rarr;</span>
+        </a>
+
+        <a class="project-card glass-panel" href="https://github.com/OpenL1nked/.github" target="_blank" rel="noopener">
+          <div class="project-head">
+            <h3>.github</h3>
+            <span class="project-badge">Org Profile</span>
+          </div>
+          <p>The organization's community health files and the vision doc this site is built from.</p>
+          <span class="project-link">View repository &rarr;</span>
+        </a>
+
+        <a class="project-card glass-panel" href="https://github.com/OpenL1nked" target="_blank" rel="noopener">
+          <div class="project-head">
+            <h3>All repositories</h3>
+            <span class="project-badge">GitHub Org</span>
+          </div>
+          <p>Browse everything OpenL1nked is building, file an issue, or open a pull request.</p>
+          <span class="project-link">Visit OpenL1nked &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contribute -->
+    <section id="contribute" class="section container contribute">
+      <div class="contribute-panel glass-panel">
+        <h2>We need your help to build this.</h2>
+        <p>
+          OpenL1nked is a 100% volunteer-driven, open-source passion project, currently in the
+          concept and planning phase. We're looking for founding developers, designers and
+          documenters &mdash; and a small group of enthusiastic pre-alpha testers to help kick the tires.
+        </p>
+        <p class="contribute-note">We are not funded and cannot offer payment for contributions &mdash; we're building this for the community, with the community.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/OpenL1nked" target="_blank" rel="noopener">Browse the Organization</a>
+          <a class="btn btn-secondary" href="https://github.com/OpenL1nked/openl1nked-Windows/issues" target="_blank" rel="noopener">Good First Issues</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 15l6-6M8.5 12.5l-1.8 1.8a2.6 2.6 0 1 0 3.7 3.7l1.8-1.8M15.5 11.5l1.8-1.8a2.6 2.6 0 1 0-3.7-3.7l-1.8 1.8"/></svg>
+        </span>
+        <span class="brand-name">OpenL1nked</span>
+      </a>
+      <p class="footer-tagline">Unlink from the proprietary, link to the open.</p>
+      <div class="footer-links">
+        <a href="https://github.com/OpenL1nked" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/OpenL1nked/scrcpy-wrapper/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
