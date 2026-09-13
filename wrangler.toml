@@ -1,3 +1,9 @@
 name = "openl1nked-com"
 compatibility_date = "2025-01-01"
-pages_build_output_dir = "."
+
+[assets]
+directory = "."
+
+[[routes]]
+pattern = "openl1nked.site"
+custom_domain = true

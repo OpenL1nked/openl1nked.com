@@ -3,7 +3,7 @@
 The official marketing site for [OpenL1nked](https://github.com/OpenL1nked) — an open-source,
 cross-platform bridge between your desktop and mobile devices.
 
-**Live at:** [openl1nked.com](https://openl1nked.com)
+**Live at:** [openl1nked.site](https://openl1nked.site)
 
 ## About
 
@@ -22,8 +22,8 @@ feel like one brand.
 ├── index.html      Single-page site markup
 ├── css/style.css   Styles (dark theme, responsive, no build step)
 ├── js/script.js    Small progressive-enhancement script (mobile nav toggle)
-├── _headers        Cloudflare Pages response headers (security + caching)
-└── wrangler.toml   Cloudflare Pages project config
+├── _headers        Cloudflare response headers (security + caching)
+└── wrangler.toml   Cloudflare Workers (static assets) project config
 ```
 
 ## Local development
@@ -40,20 +40,22 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The site is a pure static bundle (no build step) deployed on **Cloudflare Pages**.
+The site is a pure static bundle (no build step) deployed as a **Cloudflare Worker with static
+assets** (Cloudflare's current recommended path — Pages is being folded into Workers).
 
-1. In the Cloudflare dashboard, create a Pages project connected to this repository.
-2. Build settings: **Framework preset** `None`, **Build command** *(empty)*, **Build output
-   directory** `/`.
-3. Push to `main` — Cloudflare builds a preview for every branch/PR and deploys `main` to
-   production automatically.
-4. Attach the `openl1nked.com` custom domain under the project's **Custom domains** settings.
+```bash
+npx wrangler deploy
+```
+
+This uploads the site to the `openl1nked-com` Worker and, on first deploy, creates the
+`openl1nked.site` Custom Domain declared in [`wrangler.toml`](wrangler.toml) (DNS record and TLS
+cert are provisioned automatically since the zone is already on Cloudflare — no manual DNS steps
+needed). Requires a Cloudflare API token with Workers Scripts edit access, either via
+`wrangler login` locally or a `CLOUDFLARE_API_TOKEN` environment variable in CI.
 
 [`_headers`](_headers) sets security headers (CSP, frame protections) and edge/browser caching for
-static assets — Cloudflare Pages reads this file automatically at deploy time, no extra config
-needed. [`wrangler.toml`](wrangler.toml) lets the project also be deployed with the
-[Wrangler CLI](https://developers.cloudflare.com/pages/get-started/direct-upload/#wrangler-cli)
-(`npx wrangler pages deploy .`) if you'd rather not use Git integration.
+static assets — Workers static assets reads this file automatically at deploy time, using the
+same format as Pages.
 
 ## Contributing
 
