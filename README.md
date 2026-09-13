@@ -3,7 +3,7 @@
 The official marketing site for [OpenL1nked](https://github.com/OpenL1nked) — an open-source,
 cross-platform bridge between your desktop and mobile devices.
 
-**Live at:** [openl1nked.com](https://openl1nked.com)
+**Live at:** [openl1nked.site](https://openl1nked.site)
 
 ## About
 
