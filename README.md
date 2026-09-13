@@ -23,7 +23,7 @@ feel like one brand.
 ├── css/style.css   Styles (dark theme, responsive, no build step)
 ├── js/script.js    Small progressive-enhancement script (mobile nav toggle)
 ├── _headers        Cloudflare response headers (security + caching)
-└── wrangler.toml   Cloudflare Workers (static assets) project config
+└── wrangler.toml   Cloudflare Workers Builds project config
 ```
 
 ## Local development
@@ -40,18 +40,13 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The site is a pure static bundle (no build step) deployed as a **Cloudflare Worker with static
-assets** (Cloudflare's current recommended path — Pages is being folded into Workers).
+The site is a pure static bundle (no build step) deployed as a Cloudflare Worker with static
+assets, project/Worker `openl1nked-com`. It's connected to this repository via Workers Builds
+(Git integration) and redeploys automatically on every push to `main`; `[assets] directory = "."`
+in [`wrangler.toml`](wrangler.toml) tells the build to serve the repository root as-is.
 
-```bash
-npx wrangler deploy
-```
-
-This uploads the site to the `openl1nked-com` Worker and, on first deploy, creates the
-`openl1nked.site` Custom Domain declared in [`wrangler.toml`](wrangler.toml) (DNS record and TLS
-cert are provisioned automatically since the zone is already on Cloudflare — no manual DNS steps
-needed). Requires a Cloudflare API token with Workers Scripts edit access, either via
-`wrangler login` locally or a `CLOUDFLARE_API_TOKEN` environment variable in CI.
+The `openl1nked.site` custom domain is attached from the Cloudflare dashboard under the
+`openl1nked-com` Worker's **Settings → Domains & Routes**.
 
 [`_headers`](_headers) sets security headers (CSP, frame protections) and edge/browser caching for
 static assets — Workers static assets reads this file automatically at deploy time, using the
