@@ -22,8 +22,8 @@ feel like one brand.
 ├── index.html      Single-page site markup
 ├── css/style.css   Styles (dark theme, responsive, no build step)
 ├── js/script.js    Small progressive-enhancement script (mobile nav toggle)
-├── _headers        Cloudflare response headers (security + caching)
-└── wrangler.toml   Cloudflare Workers (static assets) project config
+├── _headers        Cloudflare Pages response headers (security + caching)
+└── wrangler.toml   Cloudflare Pages project config
 ```
 
 ## Local development
@@ -40,22 +40,19 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The site is a pure static bundle (no build step) deployed as a **Cloudflare Worker with static
-assets** (Cloudflare's current recommended path — Pages is being folded into Workers).
+The site is a pure static bundle (no build step) deployed on **Cloudflare Pages**, project
+`openl1nked-com`. The project is connected to this repository's Git integration and redeploys
+automatically on every push to `main`, running `npx wrangler pages deploy` per its configured
+build settings; `pages_build_output_dir = "."` in [`wrangler.toml`](wrangler.toml) tells it to
+serve the repository root as-is (no build step).
 
-```bash
-npx wrangler deploy
-```
-
-This uploads the site to the `openl1nked-com` Worker and, on first deploy, creates the
-`openl1nked.site` Custom Domain declared in [`wrangler.toml`](wrangler.toml) (DNS record and TLS
-cert are provisioned automatically since the zone is already on Cloudflare — no manual DNS steps
-needed). Requires a Cloudflare API token with Workers Scripts edit access, either via
-`wrangler login` locally or a `CLOUDFLARE_API_TOKEN` environment variable in CI.
+The `openl1nked.site` custom domain is attached from the Cloudflare dashboard under the
+`openl1nked-com` Pages project's **Custom domains** settings, not through `wrangler.toml` (Pages
+custom domains aren't configured via the `routes`/`custom_domain` keys — those are Workers-only).
 
 [`_headers`](_headers) sets security headers (CSP, frame protections) and edge/browser caching for
-static assets — Workers static assets reads this file automatically at deploy time, using the
-same format as Pages.
+static assets — Cloudflare Pages reads this file automatically at deploy time, no extra config
+needed.
 
 ## Contributing
 
