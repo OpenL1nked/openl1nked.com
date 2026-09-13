@@ -22,8 +22,8 @@ feel like one brand.
 ├── index.html      Single-page site markup
 ├── css/style.css   Styles (dark theme, responsive, no build step)
 ├── js/script.js    Small progressive-enhancement script (mobile nav toggle)
-├── _headers        Cloudflare Pages response headers (security + caching)
-└── wrangler.toml   Cloudflare Pages project config
+├── _headers        Cloudflare response headers (security + caching)
+└── wrangler.toml   Cloudflare Workers Builds project config
 ```
 
 ## Local development
@@ -40,19 +40,17 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The site is a pure static bundle (no build step) deployed on **Cloudflare Pages**, project
-`openl1nked-com`. The project is connected to this repository's Git integration and redeploys
-automatically on every push to `main`, running `npx wrangler pages deploy` per its configured
-build settings; `pages_build_output_dir = "."` in [`wrangler.toml`](wrangler.toml) tells it to
-serve the repository root as-is (no build step).
+The site is a pure static bundle (no build step) deployed as a Cloudflare Worker with static
+assets, project/Worker `openl1nked-com`. It's connected to this repository via Workers Builds
+(Git integration) and redeploys automatically on every push to `main`; `[assets] directory = "."`
+in [`wrangler.toml`](wrangler.toml) tells the build to serve the repository root as-is.
 
 The `openl1nked.site` custom domain is attached from the Cloudflare dashboard under the
-`openl1nked-com` Pages project's **Custom domains** settings, not through `wrangler.toml` (Pages
-custom domains aren't configured via the `routes`/`custom_domain` keys — those are Workers-only).
+`openl1nked-com` Worker's **Settings → Domains & Routes**.
 
 [`_headers`](_headers) sets security headers (CSP, frame protections) and edge/browser caching for
-static assets — Cloudflare Pages reads this file automatically at deploy time, no extra config
-needed.
+static assets — Workers static assets reads this file automatically at deploy time, using the
+same format as Pages.
 
 ## Contributing
 
